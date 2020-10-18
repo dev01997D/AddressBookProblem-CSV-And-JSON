@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.opencsv.CSVReader;
+import com.opencsv.CSVWriter;
 import com.opencsv.bean.StatefulBeanToCsv;
 import com.opencsv.bean.StatefulBeanToCsvBuilder;
 import com.opencsv.exceptions.CsvDataTypeMismatchException;
@@ -31,7 +32,7 @@ public class AddressBookCSV_IO {
 				"Manoj@gmail.com"));
 
 		// Creating StatefulBeanToCsv object
-		StatefulBeanToCsvBuilder<Contact> builder = new StatefulBeanToCsvBuilder(writer);
+		StatefulBeanToCsvBuilder<Contact> builder = new StatefulBeanToCsvBuilder(writer).withQuotechar(CSVWriter.NO_QUOTE_CHARACTER);
 		StatefulBeanToCsv beanWriter = builder.build();
 
 		// Write list to StatefulBeanToCsv object
